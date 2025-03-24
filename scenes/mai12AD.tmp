@@ -1,0 +1,82 @@
+[gd_scene load_steps=9 format=3 uid="uid://b80n7r6es4ynh"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_ucaa4"]
+[ext_resource type="PackedScene" uid="uid://dmr01b7jeg8x4" path="res://scenes/dog.tscn" id="2_l83bi"]
+[ext_resource type="Texture2D" uid="uid://bog7j0bcsc8ai" path="res://assets/sprites/Background/Clouds 1/1.png" id="2_p0fs2"]
+[ext_resource type="Texture2D" uid="uid://5wt2whu15kse" path="res://assets/sprites/Background/Clouds 1/2.png" id="3_klqpx"]
+[ext_resource type="Texture2D" uid="uid://d1yhjcp8oo2wb" path="res://assets/sprites/Background/Clouds 1/4.png" id="4_y2871"]
+[ext_resource type="Texture2D" uid="uid://bs1o4aw86u5cs" path="res://assets/sprites/Background/Clouds 1/3.png" id="5_2rw6q"]
+[ext_resource type="Texture2D" uid="uid://cb1r766wikg6w" path="res://assets/UI/Icons_Essential/v1.2/Icons/Gear.png" id="7_molyn"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_r5icy"]
+distance = -14.0
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_ucaa4")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(24, 117)
+
+[node name="Background" type="Node" parent="."]
+
+[node name="FrontCloud" type="Parallax2D" parent="Background"]
+z_index = -2
+repeat_size = Vector2(384, 0)
+autoscroll = Vector2(-20, 0)
+repeat_times = 8
+ignore_camera_scroll = true
+
+[node name="Cloud1" type="Sprite2D" parent="Background/FrontCloud"]
+position = Vector2(192, 108)
+scale = Vector2(0.666667, 0.666667)
+texture = ExtResource("4_y2871")
+
+[node name="BackCloud" type="Parallax2D" parent="Background"]
+z_index = -3
+repeat_size = Vector2(384, 0)
+autoscroll = Vector2(-10, 0)
+repeat_times = 8
+ignore_camera_scroll = true
+
+[node name="Cloud2" type="Sprite2D" parent="Background/BackCloud"]
+position = Vector2(192, 107.5)
+scale = Vector2(0.666667, 0.669753)
+texture = ExtResource("3_klqpx")
+
+[node name="BGSky" type="Parallax2D" parent="Background"]
+z_index = -3
+repeat_size = Vector2(384, 0)
+autoscroll = Vector2(-5, 0)
+repeat_times = 8
+ignore_camera_scroll = true
+
+[node name="Sky" type="Sprite2D" parent="Background/BGSky"]
+z_index = -4
+position = Vector2(192, 108)
+scale = Vector2(0.666667, 0.666667)
+texture = ExtResource("2_p0fs2")
+
+[node name="Line" type="Sprite2D" parent="Background/BGSky"]
+position = Vector2(192, 107.5)
+scale = Vector2(0.666667, 0.669753)
+texture = ExtResource("5_2rw6q")
+
+[node name="Dog" parent="." instance=ExtResource("2_l83bi")]
+position = Vector2(184, 168)
+
+[node name="Ground" type="Area2D" parent="."]
+position = Vector2(-37, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+position = Vector2(208, 140)
+shape = SubResource("WorldBoundaryShape2D_r5icy")
+
+[node name="SettignsUI" type="CanvasLayer" parent="."]
+
+[node name="SettingsButton" type="Button" parent="SettignsUI"]
+offset_left = 392.0
+offset_right = 416.0
+offset_bottom = 24.0
+size_flags_horizontal = 10
+size_flags_vertical = 0
+icon = ExtResource("7_molyn")

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bxn3rryn4dxae"
+path="res://.godot/imported/Spring Break.wav-10ceb9261f72478ec979f39b6161eac5.sample"
+
+[deps]
+
+source_file="res://assets/Sounds/Ambience/Spring Break.wav"
+dest_files=["res://.godot/imported/Spring Break.wav-10ceb9261f72478ec979f39b6161eac5.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

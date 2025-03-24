@@ -1,0 +1,78 @@
+[gd_scene load_steps=5 format=3 uid="uid://5w11tha4ned2"]
+
+[ext_resource type="Script" path="res://scripts/settings_menu.gd" id="1_d0aka"]
+[ext_resource type="FontFile" uid="uid://b1qiaik15icoi" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_3gv80"]
+
+[sub_resource type="GDScript" id="GDScript_bcyav"]
+script/source = "extends PopupPanel
+
+@onready var close_button = $VBoxContainer/CloseButton
+
+func _ready():
+	close_button.pressed.connect(self._on_close_button_pressed)
+
+func _on_close_button_pressed():
+	self.hide()  # Close the PopupPanel
+"
+
+[sub_resource type="LabelSettings" id="LabelSettings_hifvs"]
+
+[node name="PopupPanel" type="PopupPanel"]
+transparent_bg = true
+size = Vector2i(400, 400)
+visible = true
+always_on_top = true
+transparent = true
+min_size = Vector2i(400, 400)
+max_size = Vector2i(600, 600)
+script = SubResource("GDScript_bcyav")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+top_level = true
+texture_filter = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -196.0
+offset_top = 4.0
+offset_right = 196.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="Spacer" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="SettingsMenuTitle" type="Label" parent="VBoxContainer"]
+layout_direction = 1
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("2_3gv80")
+theme_override_font_sizes/font_size = 30
+text = "Settings
+"
+label_settings = SubResource("LabelSettings_hifvs")
+horizontal_alignment = 1
+vertical_alignment = 1
+text_direction = 1
+
+[node name="MonitorSelect" type="OptionButton" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="SettingsMenu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d0aka")

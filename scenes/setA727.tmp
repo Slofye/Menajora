@@ -1,0 +1,179 @@
+[gd_scene load_steps=5 format=3 uid="uid://dprn3iblwda56"]
+
+[ext_resource type="FontFile" uid="uid://b1qiaik15icoi" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="1_a4sa3"]
+[ext_resource type="FontFile" uid="uid://c33cuh8bqjcm7" path="res://assets/fonts/PixelOperator8.ttf" id="2_tscxj"]
+[ext_resource type="Script" path="res://scripts/UIButtons/cancel_button.gd" id="4_n30md"]
+
+[sub_resource type="GDScript" id="GDScript_jyv68"]
+
+[node name="SettingsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Margin" type="MarginContainer" parent="."]
+top_level = true
+custom_minimum_size = Vector2(400, 200)
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -316.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Margin"]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Margin/VBoxContainer"]
+layout_mode = 2
+
+[node name="Spacer" type="Control" parent="Margin/VBoxContainer"]
+layout_mode = 2
+
+[node name="TabContainer" type="TabContainer" parent="Margin/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_a4sa3")
+current_tab = 0
+drag_to_rearrange_enabled = true
+
+[node name="General" type="Control" parent="Margin/VBoxContainer/TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="MonitorSelection" type="VBoxContainer" parent="Margin/VBoxContainer/TabContainer/General"]
+layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Margin/VBoxContainer/TabContainer/General/MonitorSelection"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="Margin/VBoxContainer/TabContainer/General/MonitorSelection/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_tscxj")
+text = "Monitor"
+
+[node name="OptionButton" type="OptionButton" parent="Margin/VBoxContainer/TabContainer/General/MonitorSelection/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+selected = 0
+item_count = 2
+popup/item_0/text = "1"
+popup/item_0/id = 1
+popup/item_1/text = "2"
+popup/item_1/id = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Margin/VBoxContainer/TabContainer/General/MonitorSelection"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="Margin/VBoxContainer/TabContainer/General/MonitorSelection/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("2_tscxj")
+text = "Window Position"
+
+[node name="OptionButton" type="OptionButton" parent="Margin/VBoxContainer/TabContainer/General/MonitorSelection/HBoxContainer2"]
+layout_mode = 2
+selected = 0
+item_count = 2
+popup/item_0/text = "Top"
+popup/item_1/text = "Bottom"
+popup/item_1/id = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Margin/VBoxContainer/TabContainer/General/MonitorSelection"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="Margin/VBoxContainer/TabContainer/General/MonitorSelection/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("2_tscxj")
+text = "Resolution "
+
+[node name="OptionButton" type="OptionButton" parent="Margin/VBoxContainer/TabContainer/General/MonitorSelection/HBoxContainer3"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+item_count = 2
+popup/item_0/text = "1920 x 1080"
+popup/item_1/text = "2560 x 1440"
+popup/item_1/id = 1
+
+[node name="Audio" type="Control" parent="Margin/VBoxContainer/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="Audio" type="VBoxContainer" parent="Margin/VBoxContainer/TabContainer/Audio"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SFXVolume" type="HBoxContainer" parent="Margin/VBoxContainer/TabContainer/Audio/Audio"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Margin/VBoxContainer/TabContainer/Audio/Audio/SFXVolume"]
+layout_mode = 2
+text = "SFX Volume"
+
+[node name="HSlider" type="HSlider" parent="Margin/VBoxContainer/TabContainer/Audio/Audio/SFXVolume"]
+layout_mode = 2
+
+[node name="MusicVolume" type="HBoxContainer" parent="Margin/VBoxContainer/TabContainer/Audio/Audio"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Margin/VBoxContainer/TabContainer/Audio/Audio/MusicVolume"]
+layout_mode = 2
+text = "Music Volume"
+
+[node name="HSlider" type="HSlider" parent="Margin/VBoxContainer/TabContainer/Audio/Audio/MusicVolume"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Margin/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 10
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Margin/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ExitGameButton" type="Button" parent="Margin/VBoxContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("2_tscxj")
+text = "Exit Game
+"
+script = SubResource("GDScript_jyv68")
+
+[node name="CancelButton" type="Button" parent="Margin/VBoxContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("2_tscxj")
+text = "Cancel
+"
+script = ExtResource("4_n30md")
+
+[node name="ApplyButton" type="Button" parent="Margin/VBoxContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("2_tscxj")
+text = "Apply"
+
+[connection signal="pressed" from="Margin/VBoxContainer/VBoxContainer/HBoxContainer3/ExitGameButton" to="Margin/VBoxContainer/VBoxContainer/HBoxContainer3/ExitGameButton" method="_on_pressed"]
+[connection signal="pressed" from="Margin/VBoxContainer/VBoxContainer/HBoxContainer3/CancelButton" to="Margin/VBoxContainer/VBoxContainer/HBoxContainer3/CancelButton" method="_on_pressed"]
+[connection signal="pressed" from="Margin/VBoxContainer/VBoxContainer/HBoxContainer3/ApplyButton" to="Margin/VBoxContainer/VBoxContainer/HBoxContainer3/ExitGameButton" method="_on_apply_button_pressed"]

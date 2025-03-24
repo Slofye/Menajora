@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c2gqpsc8hno5s"
+path="res://.godot/imported/Forest with Birds.wav-d0dbd70887bfac5da4be67a58f1ee4f0.sample"
+
+[deps]
+
+source_file="res://assets/Sounds/Ambience/Forest with Birds.wav"
+dest_files=["res://.godot/imported/Forest with Birds.wav-d0dbd70887bfac5da4be67a58f1ee4f0.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
